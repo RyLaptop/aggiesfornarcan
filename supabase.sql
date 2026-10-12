@@ -21,6 +21,10 @@ alter table petition_signatures enable row level security;
 drop policy if exists "anon insert" on petition_signatures;
 create policy "anon insert" on petition_signatures for insert to anon with check (true);
 
+-- Required when "Automatically expose new tables" is off: the public form may insert, nothing else.
+grant usage on schema public to anon;
+grant insert on petition_signatures to anon;
+
 -- Public count, nothing else.
 create or replace function signature_count() returns bigint
 language sql security definer set search_path = public as
