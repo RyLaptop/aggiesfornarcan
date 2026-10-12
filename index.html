@@ -6,6 +6,10 @@
 <title>Aggies for Narcan</title>
 <meta name="description" content="A student-led petition asking Texas A&M to adopt a written policy allowing free naloxone (Narcan) in residence halls and public campus buildings.">
 <link rel="canonical" href="https://aggiesfornarcan.org/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://aggiesfornarcan.org/">
 <meta property="og:title" content="Aggies for Narcan">
@@ -49,7 +53,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .nav-wrap{display:flex;align-items:center;justify-content:space-between;padding:12px 24px;max-width:1120px;margin:0 auto}
 .brand{display:flex;align-items:center;gap:12px;font-size:1.3rem;color:var(--black)}
 .brand:hover{text-decoration:none}
-.brand-dot{width:34px;height:34px;border-radius:50%;background:var(--maroon);box-shadow:0 0 0 2px var(--warm-white),0 0 0 3px var(--border-strong);display:grid;place-items:center;color:var(--warm-white);font-size:1.1rem;font-weight:800}
+.brand{min-width:0}
+.brand-logo{width:36px;height:36px;flex-shrink:0;box-shadow:0 0 0 2px var(--warm-white),0 0 0 3px var(--border-strong);border-radius:50%}
+.brand-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav-cta{white-space:nowrap;flex-shrink:0}
+.nav-wrap{gap:16px}
+@media(max-width:520px){
+  .nav-wrap{padding:10px 16px;gap:14px}
+  .brand{gap:10px;font-size:1.1rem}
+  .brand-logo{width:32px;height:32px}
+  .nav-cta{padding:9px 18px}
+}
+@media(max-width:420px){.cta-long{display:none}}
 .nav-cta{background:var(--maroon);color:var(--warm-white);font-weight:700;font-size:.9rem;padding:9px 20px;border-radius:999px;transition:transform 160ms var(--ease),box-shadow 160ms var(--ease),background 160ms var(--ease)}
 .nav-cta:hover{text-decoration:none;background:var(--maroon-dark);transform:translateY(-1px);box-shadow:0 6px 14px -4px rgba(80,0,0,.55)}
 
@@ -126,8 +141,11 @@ textarea{min-height:84px;resize:vertical}
 </head>
 <body>
 <header class="site-header"><div class="nav-wrap">
-  <a class="brand" href="#top"><span class="brand-dot" aria-hidden="true">+</span>Aggies for Narcan</a>
-  <a class="nav-cta" href="#sign">Sign the petition</a>
+  <a class="brand" href="#top">
+    <svg class="brand-logo" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="32" fill="#500000"/><rect x="27" y="8" width="10" height="16" rx="3" fill="#fff"/><rect x="21" y="24" width="22" height="24" rx="4" fill="#fff"/><rect x="14" y="48" width="36" height="7" rx="3.5" fill="#fff"/><rect x="27" y="31" width="10" height="4" rx="2" fill="#500000"/></svg>
+    <span class="brand-name">Aggies for Narcan</span>
+  </a>
+  <a class="nav-cta" href="#sign">Sign<span class="cta-long"> the petition</span></a>
 </div></header>
 
 <section class="hero" id="top"><div class="hero-inner">
