@@ -183,6 +183,8 @@ textarea{min-height:84px;resize:vertical}
       </div>
       <label for="cm">Why this matters to you (optional)</label>
       <textarea id="cm" name="comment" maxlength="500"></textarea>
+      <label for="hf">How did you hear about the petition? (optional)</label>
+      <input id="hf" name="heard_from" type="text" maxlength="200">
       <label class="check"><input type="checkbox" name="contact_ok"> You may email me about this campaign.</label>
       <label class="check"><input type="checkbox" name="esign" required> I confirm that the name and email above are mine, that I have not signed before, and that typing my name here and checking this box is my electronic signature, which has the same effect as a handwritten signature.</label>
       <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -232,7 +234,7 @@ textarea{min-height:84px;resize:vertical}
 const CONFIG = {
   supabaseUrl: "https://hmaezonrcmteyssackgn.supabase.co",
   anonKey: "sb_publishable_uZY1JZUBN9NcyyP7PEJC6g_njktyY9l",  // publishable key, safe in the browser
-  goal: 500,
+  goal: 1000,
   contactEmail: ""      // optional, shown in footer
 };
 
@@ -271,6 +273,7 @@ $("f").addEventListener("submit", async e => {
     affiliation: d.get("affiliation"),
     class_year: d.get("class_year") ? Number(d.get("class_year")) : null,
     comment: (d.get("comment") || "").trim() || null,
+    heard_from: (d.get("heard_from") || "").trim() || null,
     contact_ok: d.get("contact_ok") === "on",
     esign_consent: true,
     consent_version: "v1"

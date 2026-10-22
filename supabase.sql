@@ -7,6 +7,7 @@ create table if not exists petition_signatures (
   affiliation text not null check (affiliation in ('student','parent','former_student','faculty_staff','community')),
   class_year smallint check (class_year between 1950 and 2035),
   comment text check (char_length(comment) <= 500),
+  heard_from text check (char_length(heard_from) <= 200),
   contact_ok boolean not null default false,
   esign_consent boolean not null check (esign_consent),  -- must be true
   consent_version text not null default 'v1'              -- bump when the consent wording changes
@@ -30,3 +31,6 @@ create or replace function signature_count() returns bigint
 language sql security definer set search_path = public as
 $$ select count(*) from petition_signatures $$;
 grant execute on function signature_count() to anon;
+
+-- Migration for tables created before heard_from existed (run once):
+-- alter table petition_signatures add column if not exists heard_from text check (char_length(heard_from) <= 200);
