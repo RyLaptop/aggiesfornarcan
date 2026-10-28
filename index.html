@@ -102,6 +102,11 @@ h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:0 0 20px;line-height:1.05;color:var
 .ask p{margin:8px 0 0}
 
 .split{max-width:720px;margin:0 auto}
+.about{max-width:720px;margin:56px auto 0;padding-top:32px;border-top:1px solid var(--border);display:flex;gap:24px;align-items:center}
+.about img{width:132px;height:132px;object-fit:cover;object-position:50% 20%;border-radius:var(--radius);flex:none}
+.about h2{font-size:1.25rem;margin:0 0 6px}
+.about p{margin:0}
+@media(max-width:520px){.about{flex-direction:column;align-items:flex-start}}
 
 /* form card */
 .card{background:var(--warm-white);border:1px solid var(--border-strong);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow-lg);color:var(--black)}
@@ -217,12 +222,21 @@ textarea{min-height:84px;resize:vertical}
     </section>
 
   </div>
+
+  <section class="about" id="about">
+    <img src="rylan.jpg" width="132" height="132" alt="Rylan Lathrop" loading="lazy">
+    <div>
+      <p class="section-label">About</p>
+      <h2>Rylan Lathrop</h2>
+      <p>Student Senator, College of Arts &amp; Sciences. I started Aggies for Narcan because every Aggie should be able to get naloxone on campus.</p>
+    </div>
+  </section>
 </main>
 
 <footer class="site-footer">
   <div class="footer-wrap">
     <strong>Aggies for Narcan</strong>
-    <p>A student-led initiative. Not affiliated with or endorsed by Texas A&amp;M University.<span id="contact"></span></p>
+    <p>Organized by Rylan Lathrop, Student Senator. A student-led initiative. Not affiliated with or endorsed by Texas A&amp;M University.<span id="contact"></span></p>
     <p><strong class="foot-label">Privacy.</strong> We use your name and email only for this campaign. We never sell or share them, and only the total signature count is shown publicly.</p>
     <p>Narcan is a registered trademark of its owner and is used here only to refer to the product. This site is not affiliated with the manufacturer.</p>
   </div>
